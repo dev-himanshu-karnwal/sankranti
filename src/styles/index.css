@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* 
+  Tailwind theme mapping
+  This exposes design tokens as Tailwind utilities like:
+  bg-surface-base, text-primary, etc.
+*/
+@theme inline {
+  /* Surface */
+  --color-surface-base: var(--color-surface-base);
+  --color-surface-muted: var(--color-surface-muted);
+  --color-surface-subtle: var(--color-surface-subtle);
+  --color-surface-accent: var(--color-surface-accent);
+
+  /* Brand */
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+
+  /* Text */
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-on-primary: var(--color-text-on-primary);
+  --color-text-on-secondary: var(--color-text-on-secondary);
+
+  /* Border */
+  --color-border-primary: var(--color-border-primary);
+}
+
+/* 
+  Theme definition (brand theme)
+  These are actual values. Can be swapped for dark/alt themes.
+*/
+:root,
+[data-theme="brand"] {
+  --color-surface-base: #fbfaf7; /* App background */
+  --color-surface-muted: #FCF6EB; /* Soft tinted background (low emphasis) */
+  --color-surface-subtle: #ffffff; /* Neutral surfaces (cards, containers) */
+  --color-surface-accent: #d5eadd; /* Highlighted sections (feature cards) */
+
+  --color-primary: #ca1e56; /* Primary CTA (buttons, highlights) */
+  --color-secondary: #721a57; /* Secondary accent */
+
+  --color-text-primary: #000000; /* Main readable text */
+  --color-text-secondary: #432424; /* Supporting text */
+  --color-text-muted: #767676; /* Low emphasis / helper / placeholder text */
+  --color-text-on-primary: #ffffff; /* Text on primary backgrounds */
+  --color-text-on-secondary: #ffffff; /* Text on secondary backgrounds */
+
+  --color-border-primary: #BABABA; /* Border color */
+}
+
+/* 
+  Global base styles
+*/
+body {
+  background-color: var(--color-surface-base);
+  color: var(--color-text-primary);
+  height: 100dvh;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+a, button {
+  cursor: pointer;
+}
