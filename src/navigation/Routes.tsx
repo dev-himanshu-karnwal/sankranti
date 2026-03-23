@@ -1,10 +1,13 @@
 import { Route, Routes } from "react-router-dom";
-import { NotFoundPage, OnboardPage, SplashPage, SignInPage, CreateAccountPage, VerificationPage, AccountSuccessfulPage } from "../pages";
+import { NotFoundPage, OnboardPage, SplashPage, SignInPage, CreateAccountPage, VerificationPage, AccountSuccessfulPage, DirectoryPage } from "../pages";
 import { AuthLayout } from "../ui/components";
 
 export default function AppRoutes() {
   return (
     <Routes>
+      {/* Can be deleted once all pages are linkked, tested and made dynamic */}
+      <Route path="/directory" element={<DirectoryPage />} />
+
       <Route path="/" element={<SplashPage />} />
       <Route path="/onboard" element={<OnboardPage />} />
       <Route path="/account-successfull" element={<AccountSuccessfulPage />} />
