@@ -8,7 +8,7 @@ export default function VerificationPage() {
 
   const handleConfirm = () => {
     // Navigate home or to success screen after verify
-    navigate("/");
+    navigate("/account-successfull");
   };
 
   return (
