@@ -43,6 +43,8 @@ export default function DirectoryPage() {
         { name: "Create Account Page", path: "/auth/create-account" },
         { name: "Verification (OTP) Page", path: "/auth/verify" },
         { name: "Account Successful Page", path: "/account-successfull" },
+        {name: "Home page", path:"/home"},
+        {name: "Menu page", path:"/menu"},
     ];
 
     return (

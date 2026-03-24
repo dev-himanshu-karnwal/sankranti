@@ -25,6 +25,13 @@
 
   /* Border */
   --color-border-primary: var(--color-border-primary);
+  --color-border-warm: var(--color-border-warm);
+
+  /* Arrow */
+  --color-arrow: var(--color-arrow);
+
+  /* Checkbox */
+  --color-checkbox: var(--color-checkbox);
 }
 
 /* 
@@ -48,6 +55,11 @@
   --color-text-on-secondary: #ffffff; /* Text on secondary backgrounds */
 
   --color-border-primary: #BABABA; /* Border color */
+  --color-border-warm: #BDAE9A; /* Warm beige border color */
+
+  --color-arrow: #751D57; /* Arrow color */
+
+  --color-checkbox: #D9D9D9; /* Checkbox color */
 }
 
 /* 

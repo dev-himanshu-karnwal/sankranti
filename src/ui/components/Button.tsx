@@ -18,7 +18,7 @@ export default function Button({
     className?: string;
     disabled?: boolean;
 }) {
-    const baseStyles = "px-6 py-[14px] text-[13px] font-medium transition-colors relative isolate w-full rounded-[10px] flex items-center justify-center";
+    const baseStyles = "px-6 py-[14px] text-[10px] font-medium transition-colors relative isolate w-full rounded-[10px] flex items-center justify-center";
 
     return (
         <button

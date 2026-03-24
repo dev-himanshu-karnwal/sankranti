@@ -19,14 +19,14 @@ export default function SignInPage() {
           name="password" 
         />
 
-        <div className="flex items-center justify-between mt-2">
+        <div className="flex items-center justify-between">
           <Checkbox label="Remember Me" />
-          <Link to="#" className="text-sm text-text-secondary hover:underline">
+          <Link to="#" className="text-[12px] text-text-secondary hover:underline">
             Forgot Password
           </Link>
         </div>
 
-        <p className="text-[11px] text-text-secondary mt-6 leading-relaxed">
+        <p className="text-[10px] text-text-secondary mt-6 leading-relaxed">
           By signing in, I agree to Sankranti's{" "}
           <Link to="#" className="underline">Privacy Policy</Link>,{" "}
           <Link to="#" className="underline">Terms of Use</Link>, 

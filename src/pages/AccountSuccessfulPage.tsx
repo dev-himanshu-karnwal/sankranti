@@ -24,7 +24,7 @@ export default function AccountSuccessfulPage() {
 
             {/* Bottom Half */}
             <div className="flex-1 bg-surface-muted flex flex-col items-center px-6 pt-12 pb-8">
-                <p className="text-center text-[13px] font-medium leading-[1.6]">
+                <p className="text-center text-[13px] font-medium leading-[1.6] text-text-secondary">
                     Congratulations, your account has been<br/>successfully created.
                 </p>
                 
