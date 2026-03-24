@@ -1,13 +1,17 @@
-import { useState } from 'react';
-import ProfileMenu from './ProfileMenu';
+import { useState } from "react";
+import ProfileMenu from "./ProfileMenu";
 
-function PanelLayout({ isShowDeliveryOption }: { isShowDeliveryOption?: boolean }) {
+function PanelLayout({
+  isShowDeliveryOption,
+}: {
+  isShowDeliveryOption?: boolean;
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
       <header className="flex items-center justify-between px-6 py-4 mt-2">
-        <button 
+        <button
           onClick={() => setIsMenuOpen(true)}
           className="text-secondary hover:opacity-80 transition-opacity"
         >
@@ -29,9 +33,9 @@ function PanelLayout({ isShowDeliveryOption }: { isShowDeliveryOption?: boolean 
           </svg>
         </button>
         {isShowDeliveryOption && (
-        <button className="border border-secondary rounded-full px-5 py-[6px] text-[11px] font-bold text-text-primary tracking-wide bg-transparent">
-          PICKUP OR DELIVERY
-        </button>
+          <button className="border border-secondary rounded-full px-5 py-[6px] text-[11px] font-bold text-text-primary tracking-wide bg-transparent">
+            PICKUP OR DELIVERY
+          </button>
         )}
         <button className="text-secondary hover:opacity-80 transition-opacity">
           <svg

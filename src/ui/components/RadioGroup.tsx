@@ -7,13 +7,23 @@ interface RadioGroupProps {
   className?: string;
 }
 
-export default function RadioGroup({ label, options, name, value, onChange, className = "" }: RadioGroupProps) {
+export default function RadioGroup({
+  label,
+  options,
+  name,
+  value,
+  onChange,
+  className = "",
+}: RadioGroupProps) {
   return (
     <div className={`flex flex-col gap-2 ${className}`}>
       <span className="text-[12px] text-text-muted">{label}</span>
       <div className="flex items-center gap-6">
         {options.map((opt) => (
-          <label key={opt.value} className="flex items-center gap-2 cursor-pointer text-[12px] text-text-muted">
+          <label
+            key={opt.value}
+            className="flex items-center gap-2 cursor-pointer text-[12px] text-text-muted"
+          >
             <input
               type="radio"
               name={name}
