@@ -14,7 +14,7 @@ export default function VerificationPage() {
   return (
     <>
       <div className="flex flex-col gap-6 w-full grow mt-6">
-        <div className="flex flex-col gap-4 text-[13px] text-text-primary">
+        <div className="flex flex-col gap-4 text-[10px] text-text-primary">
           <p>OTP was sent to +91**** 30</p>
           <p className="leading-relaxed">
             Please enter the OTP we sent to your mobile via SMS in order to verify your details and create your account
@@ -22,13 +22,13 @@ export default function VerificationPage() {
         </div>
 
         <div className="mt-4 flex flex-col gap-3">
-          <label className="text-[12px] font-bold text-text-primary uppercase tracking-wide">Enter OTP</label>
+          <label className="text-[10px] font-medium text-text-primary uppercase tracking-wide">Enter OTP</label>
           <OtpInput value={otp} onChange={setOtp} length={4} />
           
-          <div className="flex items-center justify-between mt-2 text-[11px]">
+          <div className="flex items-center justify-between mt-2 text-[10px]">
             <span className="text-text-primary">Time Remaining 0:06s</span>
             <span className="text-text-primary">
-              Didn't receive OTP? <button className="text-[#A2A2A2] underline hover:text-text-primary transition-colors">Resend</button>
+              Didn't receive OTP? <button className="text-border-warm underline hover:text-text-primary transition-colors">Resend</button>
             </span>
           </div>
         </div>

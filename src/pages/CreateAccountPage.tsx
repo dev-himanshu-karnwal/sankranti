@@ -7,7 +7,7 @@ export default function CreateAccountPage() {
   return (
     <>
       {/* Form */}
-      <div className="flex flex-col gap-6 w-full grow mt-6">
+      <div className="flex flex-col gap-4 w-full grow mt-6">
         <Input 
           placeholder="First name*" 
           type="text" 

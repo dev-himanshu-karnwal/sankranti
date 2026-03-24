@@ -14,16 +14,18 @@ export default function OnboardPage() {
             <div className="flex flex-col items-center justify-center gap-7">
                 <img src="/images/flower_half_logo.png" className="w-[100px]" alt="" />
 
-                <div className="bg-surface-accent text-center flex flex-col items-center justify-center p-7 w-[90vw] max-w-[500px]">
-                    <h2 className="text-xl font-bold">Taste and feel the Difference</h2>
-                    <p className="text-sm font-normal mb-6">Sankranti is about growth, <br />celebration, and eating great food together</p>
+                <div className="bg-surface-accent text-center flex flex-col items-center justify-center p-7 w-[90vw] max-w-[500px] relative rounded-[20px]">
+                    <span className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-surface-accent rotate-45" />
+                    <span className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-surface-accent rotate-45" />
+                    <h2 className="text-xl font-bold leading-none tracking-normal text-center">Taste and feel the Difference</h2>
+                    <p className="text-[12px] font-normal leading-[150%] text-center mb-6">Sankranti is about growth, <br />celebration, and eating great food together</p>
 
                     <div className="flex flex-col gap-3 items-stretch justify-center mb-3">
                         <Button variant="primary" onClick={() => navigate('/auth/create-account')}>Create Account</Button>
                         <Button variant="secondary" onClick={() => navigate('/auth/sign-in')}>Sign in</Button>
                     </div>
 
-                    <Link className="relative flex items-center text-xs text-secondary gap-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-200 hover:after:w-full" to="#">
+                    <Link className="relative flex items-center text-[10px] text-secondary gap-1 after:absolute after:left-0 after:bottom-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-200 hover:after:w-full" to="#">
                         Continue as Guest
                         <span className="h-[7px]">
                             <svg className="w-full h-full" width="3" height="5" viewBox="0 0 3 5" fill="none" xmlns="http://www.w3.org/2000/svg">
