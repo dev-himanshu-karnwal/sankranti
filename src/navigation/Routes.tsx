@@ -3,6 +3,10 @@ import { NotFoundPage, OnboardPage, SplashPage, SignInPage, CreateAccountPage, V
 import { AuthLayout } from "../ui/components";
 import HomePage from "../pages/HomePage";
 import MenuPage from "../pages/MenuPage";
+import CategoryPage from "../pages/CategoryPage";
+import ProductBuilderPage from "../pages/ProductBuilderPage";
+import CheckoutPage from "../pages/CheckoutPage";
+import RewardPage from "../pages/RewardPage";
 
 export default function AppRoutes() {
   return (
@@ -21,7 +25,11 @@ export default function AppRoutes() {
       </Route>
 
       <Route path="/home" element ={<HomePage />} />
-      <Route path="/menu" element ={<MenuPage />} />``
+      <Route path="/menu" element ={<MenuPage />} />
+      <Route path="/reward" element={<RewardPage />} />
+      <Route path="/category/:id" element={<CategoryPage />} />
+      <Route path="/builder/:item" element={<ProductBuilderPage />} />
+      <Route path="/checkout" element={<CheckoutPage />} />
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

@@ -16,7 +16,7 @@ const CopyButton = ({ path }: { path: string }) => {
             onClick={handleCopy}
             className={`p-[10px] shrink-0 border rounded-[8px] transition-colors flex items-center justify-center ${
                 copied 
-                    ? "bg-[#E6F4EA] border-[#34A853] text-[#34A853]" 
+                    ? "bg-surface-accent border-green-500 text-green-600" 
                     : "bg-surface-base hover:bg-surface-muted border-border-primary/50 hover:border-border-primary text-text-secondary"
             }`}
             title="Copy path"
@@ -45,6 +45,7 @@ export default function DirectoryPage() {
         { name: "Account Successful Page", path: "/account-successfull" },
         {name: "Home page", path:"/home"},
         {name: "Menu page", path:"/menu"},
+        {name: "Rewards page", path:"/reward"},
     ];
 
     return (

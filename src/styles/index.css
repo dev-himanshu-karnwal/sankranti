@@ -26,12 +26,23 @@
   /* Border */
   --color-border-primary: var(--color-border-primary);
   --color-border-warm: var(--color-border-warm);
+  --color-border-subtle: var(--color-border-subtle);
 
   /* Arrow */
   --color-arrow: var(--color-arrow);
 
   /* Checkbox */
   --color-checkbox: var(--color-checkbox);
+
+  /* Veg/Non-Veg */
+  --color-veg: var(--color-veg);
+  --color-non-veg: var(--color-non-veg);
+
+  /* Card Brands */
+  --color-brand-visa: var(--color-brand-visa);
+  --color-brand-mastercard-red: var(--color-brand-mastercard-red);
+  --color-brand-mastercard-orange: var(--color-brand-mastercard-orange);
+  --color-brand-amex: var(--color-brand-amex);
 }
 
 /* 
@@ -56,10 +67,19 @@
 
   --color-border-primary: #BABABA; /* Border color */
   --color-border-warm: #BDAE9A; /* Warm beige border color */
+  --color-border-subtle: #f0e6e8; /* Very subtle border color */
 
   --color-arrow: #751D57; /* Arrow color */
 
   --color-checkbox: #D9D9D9; /* Checkbox color */
+
+  --color-veg: #22c55e; /* Green for veg items */
+  --color-non-veg: #ef4444; /* Red for non-veg items */
+
+  --color-brand-visa: #0055A4;
+  --color-brand-mastercard-red: #EB001B;
+  --color-brand-mastercard-orange: #F79E1B;
+  --color-brand-amex: #0070D1;
 }
 
 /* 

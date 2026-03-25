@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
+import AppButton from './AppButton';
 
 
 const CloseIcon = () => (
@@ -59,37 +60,37 @@ export default function ProfileMenu({ isOpen, onClose }: { isOpen: boolean; onCl
 
   return (
     <div 
-      className={`fixed inset-0 z-[60] bg-surface-muted transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] transform will-change-transform ${
-        isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+      className={`fixed inset-0 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] transform bg-white ${
+        isOpen ? 'translate-y-0' : '-translate-y-full'
       }`}
+      style={{ backgroundColor: '#ffffff', zIndex: 99999 }}
     >
 
-      <div className="h-full flex flex-col pt-10 overflow-x-hidden overflow-y-auto relative [&::-webkit-scrollbar]:hidden">
+      <div className="h-full flex flex-col overflow-x-hidden overflow-y-auto relative [&::-webkit-scrollbar]:hidden pb-8">
         
-
-        {/* TOP ROW: Back, Profile, Close exactly on one line */}
-        <div className="flex items-center justify-between px-6 mb-5 flex-shrink-0 relative z-20 min-h-[44px]">
+        {/* TOP ROW: Back, Profile, Close exactly on one line - now forcefully STICKY */}
+        <div className="sticky top-0 left-0 w-full z-50 bg-[#FCF6EB] flex items-center justify-between px-6 pt-10 pb-4 flex-shrink-0 min-h-[80px]">
           
-          <button 
+          <AppButton 
             onClick={() => setView('main')}
-            className={`text-secondary p-2 transition-opacity duration-300 ${
+            className={`!w-auto !p-2 text-secondary transition-opacity duration-300 hover:bg-transparent ${
               view === 'rewards' ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
             }`}
           >
-            <ChevronLeftIcon />
-          </button>
+            <ChevronLeftIcon /> 
+          </AppButton>
 
-          <div className="absolute left-1/2 -translate-x-1/2 text-secondary flex items-center justify-center h-full">
+          <div className="absolute left-1/2 -translate-x-1/2 text-secondary flex items-center justify-center h-full top-0 pt-7">
             <ProfileUserIcon />
           </div>
 
-          <button onClick={onClose} className="text-secondary hover:scale-110 transition-transform p-2">
+          <AppButton onClick={onClose} className="!w-auto !p-2 text-secondary hover:scale-110 transition-transform hover:bg-transparent">
             <CloseIcon />
-          </button>
+          </AppButton>
         </div>
 
-        {/* LOGO */}
-        <div className="flex justify-center mb-8 flex-shrink-0 relative z-10 px-8">
+        {/* LOGO AREA */}
+        <div className="bg-[#FCF6EB] flex justify-center flex-shrink-0 relative z-10 px-8 pb-2">
           <img src="/images/profile.png" alt="Sankranti Logo" className="w-[143px] object-contain" />
         </div>
 
@@ -99,77 +100,72 @@ export default function ProfileMenu({ isOpen, onClose }: { isOpen: boolean; onCl
           style={{ transform: view === 'rewards' ? 'translateX(-50%)' : 'translateX(0%)' }}
         >
     
-          <div className="w-1/2 flex flex-col">
-            <div className="flex flex-col justify-center items-center gap-[14px] mb-12 px-8">
-              <Button variant="secondary" className="!py-[12px] !w-[160px] uppercase text-[12px] font-bold tracking-wide">Create Account</Button>
-              <Button variant="primary" className="!py-[12px] !w-[160px] uppercase text-[12px] font-bold tracking-wide">Sign In</Button>
+          <div className="w-1/2 flex flex-col min-h-full">
+            <div className="bg-[#FCF6EB] pb-2">
+              <div className="flex flex-col justify-center items-center gap-[14px] mb-8 px-8 pt-4">
+                <Button variant="secondary" className="!py-[12px] !w-[160px] uppercase text-[12px] font-bold tracking-wide">Create Account</Button>
+                <Button variant="primary" className="!py-[12px] !w-[160px] uppercase text-[12px] font-bold tracking-wide">Sign In</Button>
+              </div>
+
+              <ul className="flex flex-col">
+                {MAIN_MENU_ITEMS.map((item, index) => (
+                  <li key={index} className="border-t border-border-subtle first:border-t-0 border-b border-border-subtle -mb-[1px]">
+                    <AppButton 
+                      onClick={() => item.isAction && setView('rewards')}
+                      className="!w-full flex items-center justify-between !py-4 !px-8 group text-left transition-colors hover:bg-black/[0.02]"
+                    >
+                      <span className="text-[13px] font-medium text-text-secondary">{item.label}</span>
+                      <span className="text-text-secondary transition-transform group-hover:translate-x-1 duration-300">
+                        <ChevronRightIcon />
+                      </span>
+                    </AppButton>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <ul className="flex flex-col">
-              {MAIN_MENU_ITEMS.map((item, index) => (
-                <li key={index} className="border-t border-[#E8D4D8] first:border-t-0 border-b border-[#E8D4D8] -mb-[1px]">
-                  <button 
-                    onClick={() => item.isAction && setView('rewards')}
-                    className="w-full flex items-center justify-between py-5 px-8 group text-left transition-colors hover:bg-black/[0.02]"
-                  >
-                    <span className="text-[13px] font-medium text-text-secondary">{item.label}</span>
-                    <span className="text-text-secondary transition-transform group-hover:translate-x-1 duration-300">
-                      <ChevronRightIcon />
-                    </span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-
       
-            <div className="flex-1 bg-surface-subtle mt-3 pt-8 px-8">
-              <Footer className="mt-4" />
+            <div className="flex-1 mt-3 pt-6 px-8">
+              <Footer className="mt-2" />
             </div>
           </div>
 
          
-          <div className="w-1/2 flex flex-col">
-            
-        
-            <div className="flex flex-col items-center mb-8 drop-shadow-sm px-8">
-              <span className="text-[18px] text-text-primary text-center mb-0.5">You've Got</span>
-              <span className="text-[32px] font-bold text-text-primary text-center leading-none tracking-tight">10 POINTS</span>
+          <div className="w-1/2 flex flex-col min-h-full">
+            <div className="bg-[#FCF6EB] pb-2">
+              <div className="flex flex-col items-center mb-4 px-8 pt-6">
+                <span className="text-[18px] text-text-primary text-center mb-0.5">You've Got</span>
+                <span className="text-[32px] font-bold text-text-primary text-center leading-none tracking-tight">10 POINTS</span>
+              </div>
+
+              <ul className="flex flex-col">
+                <RewardFeatureItem title="REWARDS EXCHANGE" subtitle="Redeem your points" isTop />
+                <RewardFeatureItem title="MY REWARDS" subtitle="Ready to use" />
+                <RewardFeatureItem title="ABOUT REWARDS" />
+              </ul>
             </div>
 
-     
-            <ul className="flex flex-col">
-              <RewardFeatureItem title="REWARDS EXCHANGE" subtitle="Redeem your points" isTop />
-              <RewardFeatureItem title="MY REWARDS" subtitle="Ready to use" />
-              <RewardFeatureItem title="ABOUT REWARDS" />
-            </ul>
-
-        
-            <div className="flex-1 bg-surface-subtle shadow-sm">
+            <div className="flex-1 bg-white">
               <ul className="flex flex-col">
                 {REWARDS_MENU_ITEMS.map((item, index) => (
-                  <li key={index} className="border-b border-[#E8D4D8]">
-                    <button className="w-full flex items-center justify-between py-5 px-8 group text-left transition-colors hover:bg-black/[0.02]">
+                  <li key={index} className="border-b border-border-subtle">
+                    <AppButton className="!w-full flex items-center justify-between !py-4 !px-8 group text-left transition-colors hover:bg-black/[0.02]">
                       <span className="text-[13px] font-medium text-text-secondary">{item.label}</span>
                       <span className="text-text-secondary transition-transform group-hover:translate-x-1 duration-300">
-                         <ChevronRightIcon size={18} />
+                        <ChevronRightIcon size={18} />
                       </span>
-                    </button>
+                    </AppButton>
                   </li>
                 ))}
-                
-               
-                <li className="border-b border-[#E8D4D8]">
-                  <button className="w-full flex items-center justify-between py-5 px-8 text-left transition-colors hover:bg-black/[0.02]">
+                <li >
+                  <AppButton className="!w-full flex items-center justify-between !py-4 !px-8 text-left transition-colors hover:bg-black/[0.02]">
                     <span className="text-[12px] font-bold text-primary tracking-wide">Log Out</span>
-                  </button>
+                  </AppButton>
                 </li>
               </ul>
-              
-           
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
@@ -179,11 +175,11 @@ export default function ProfileMenu({ isOpen, onClose }: { isOpen: boolean; onCl
 
 function RewardFeatureItem({ title, subtitle, isTop = false }: { title: string; subtitle?: string; isTop?: boolean }) {
   return (
-    <li className={`border-b border-[#E8D4D8] ${isTop ? 'border-t' : ''}`}>
-      <button className={`w-full flex flex-col items-start px-8 text-left transition-colors hover:bg-black/[0.02] ${subtitle ? 'py-[14px]' : 'py-5'}`}>
+    <li className={`border-b border-border-subtle ${isTop ? 'border-t' : ''}`}>
+      <AppButton className={`!w-full flex flex-col items-start !px-8 text-left transition-colors hover:bg-black/[0.02] ${subtitle ? '!py-3' : '!py-4'}`}>
         <span className="text-[11px] font-bold text-text-secondary uppercase tracking-wide">{title}</span>
         {subtitle && <span className="text-[11px] text-text-secondary font-medium leading-normal opacity-70 mt-0.5">{subtitle}</span>}
-      </button>
+      </AppButton>
     </li>
   );
 }

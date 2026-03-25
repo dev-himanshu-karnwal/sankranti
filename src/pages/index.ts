@@ -6,3 +6,7 @@ export { default as CreateAccountPage } from "./CreateAccountPage.tsx";
 export { default as VerificationPage } from "./VerificationPage.tsx";
 export { default as AccountSuccessfulPage } from "./AccountSuccessfulPage.tsx";
 export { default as DirectoryPage } from "./DirectoryPage.tsx";
+export { default as HomePage } from "./HomePage.tsx";
+export { default as MenuPage } from "./MenuPage.tsx";
+export { default as CategoryPage } from "./CategoryPage.tsx";
+export { default as ProductBuilderPage } from "./ProductBuilderPage.tsx";
