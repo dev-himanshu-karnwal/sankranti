@@ -1,7 +1,8 @@
 import Button from '../Button';
 import { VegIcon, NonVegIcon } from '../../../icons/icon';
 import { allCategories, mobileCategories } from '../../../data/items';
-import { AppButton } from '../index'; // Assuming AppButton is exported from '../index'
+import { AppButton } from '../index';
+import { recommendationStore } from '../../../data/recommendationStore';
 
 interface MobileViewProps {
   activeTab: string;
@@ -21,7 +22,7 @@ export default function MobileView({
   navigate
 }: MobileViewProps) {
   return (
-    <div className="md:hidden flex flex-col h-screen w-full max-w-[428px] mx-auto overflow-hidden bg-white relative z-10 shadow-[0_0_40px_rgba(0,0,0,0.05)]">
+    <div className="max-[430px]:flex hidden flex-col h-screen w-full max-w-[428px] mx-auto overflow-hidden bg-white relative z-10 shadow-[0_0_40px_rgba(0,0,0,0.05)]">
       
       {/* Header */}
       <header className="flex justify-between items-center px-6 pt-12 pb-32 w-full flex-shrink-0 bg-surface-muted/30">
@@ -60,8 +61,16 @@ export default function MobileView({
         
         <div className="px-5 flex flex-col gap-5 pb-10">
           {filteredItems.length > 0 ? (
-            filteredItems.map((item, idx) => (
-              <div key={idx} onClick={() => navigate(`/builder/${item.title.toLowerCase().replace(/\s+/g, '-')}`)} className="bg-white rounded-[16px] shadow-[0_2px_16px_rgba(0,0,0,0.06)] p-3.5 flex gap-4 cursor-pointer hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] active:scale-[0.98] active:opacity-90 transition-all duration-200 border border-transparent">
+            filteredItems.map((item, idx) => {
+              return (
+                <div 
+                  key={idx} 
+                  onClick={() => {
+                    recommendationStore.addRecommendedItem(item);
+                    navigate(`/builder/${item.id}`);
+                  }} 
+                  className="bg-white rounded-[16px] shadow-[0_2px_16px_rgba(0,0,0,0.06)] p-3.5 flex gap-4 cursor-pointer hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] active:scale-[0.98] active:opacity-90 transition-all duration-200 border border-transparent"
+                >
                 <div className="flex flex-col flex-shrink-0 items-center justify-start pb-1 w-[120px]">
                   <div className="w-[120px] h-[95px] bg-surface-muted/50 rounded-[16px] flex items-center justify-center relative overflow-hidden pointer-events-none mb-3">
                     <img src={item.imageSrc} alt={item.title} className="w-[110%] h-auto object-contain mix-blend-multiply drop-shadow-md pb-2" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.classList.add('bg-surface-base'); }} />
@@ -85,7 +94,8 @@ export default function MobileView({
                   </div>
                 </div>
               </div>
-            ))
+            );
+          })
           ) : (
             <div className="flex flex-col items-center justify-center py-20 opacity-40">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>

@@ -2,46 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 import AppButton from './AppButton';
-
-const CloseIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18" />
-    <line x1="6" y1="6" x2="18" y2="18" />
-  </svg>
-);
-
-const ChevronRightIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const CheckboxCheckedIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="18" height="18" rx="4" fill="var(--color-surface-accent)"/>
-    <path d="M5 9L8 12L13 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const CheckboxUncheckedIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="1" y="1" width="16" height="16" rx="3" fill="transparent" stroke="var(--color-border-primary)" strokeWidth="2"/>
-  </svg>
-);
-
-const LineItem = ({ label, price }: { label: string; price: string }) => (
-  <div className="flex justify-between items-center w-full">
-    <span className="text-[11px] font-medium text-text-primary tracking-wide">{label}</span>
-    <span className="text-[11px] font-medium text-text-primary">{price}</span>
-  </div>
-);
-
-const BannerStar = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2 L8.91 8.26 L2 9.27 L7 14.14 L5.82 21.02 L12 17.77 Z" fill="var(--color-primary)" />
-    <path d="M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 Z" fill="var(--color-secondary)" />
-  </svg>
-);
+import { CloseIcon, ChevronRightIcon, CheckboxCheckedIcon, CheckboxUncheckedIcon, BannerStar, LineItem } from '../../icons/icon';
 
 export default function CartMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const navigate = useNavigate();
@@ -60,7 +21,7 @@ export default function CartMenu({ isOpen, onClose }: { isOpen: boolean; onClose
 
   return (
     <div 
-      className={`fixed inset-0 z-[9999] flex justify-end transition-opacity duration-500 ${
+      className={`fixed inset-0 z-[99999] flex justify-end transition-opacity duration-500 ${
         isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}
     >
@@ -126,7 +87,11 @@ export default function CartMenu({ isOpen, onClose }: { isOpen: boolean; onClose
             </div>
 
             <div className="flex justify-center">
-              <Button variant="primary" className="!w-full max-w-[280px] !py-[13px] text-[12px] uppercase font-bold tracking-wide">
+              <Button 
+                variant="primary" 
+                onClick={() => { onClose(); navigate('/menu'); }}
+                className="!w-full max-w-[280px] !py-[13px] text-[12px] uppercase font-bold tracking-wide"
+              >
                 ADD ANOTHER MENU ITEM
               </Button>
             </div>

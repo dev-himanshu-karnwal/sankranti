@@ -2,50 +2,14 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
 import AppButton from './AppButton';
-
-
-const CloseIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18" />
-    <line x1="6" y1="6" x2="18" y2="18" />
-  </svg>
-);
-
-const ChevronLeftIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M15 18L9 12L15 6" />
-  </svg>
-);
+import { ChevronLeftIcon, CloseIcon,ProfileUserIcon  } from '../../icons/icon';
+import { MAIN_MENU_ITEMS, REWARDS_MENU_ITEMS } from '../../data/profile';
 
 const ChevronRightIcon = ({ size = 20 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
-
-const ProfileUserIcon = () => (
-  <svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M11.5001 0C15.3048 0 18.4001 3.09534 18.4001 6.9C18.4001 10.7047 15.3048 13.8 11.5001 13.8C7.69549 13.8 4.60015 10.7047 4.60015 6.9C4.60015 3.09534 7.69549 0 11.5001 0ZM11.5001 12.2667C14.4593 12.2667 16.8668 9.85918 16.8668 6.9C16.8668 3.94082 14.4593 1.53333 11.5001 1.53333C8.54097 1.53333 6.13348 3.94082 6.13348 6.9C6.13348 9.85918 8.54097 12.2667 11.5001 12.2667Z" fill="currentColor"/>
-    <path d="M2.91507 18.3067C4.80414 16.3886 7.30843 15.3323 9.96667 15.3323H13.0333C15.6915 15.3323 18.1959 16.3886 20.0849 18.3067C21.9647 20.2154 23 22.7349 23 25.4012C23 25.8246 22.6567 26.1678 22.2333 26.1678H0.766666C0.343264 26.1678 0 25.8246 0 25.4012C0 22.7349 1.03526 20.2154 2.91507 18.3067ZM21.4329 24.6345C21.0488 20.2857 17.4283 16.8656 13.0333 16.8656H9.96667C5.57167 16.8656 1.95117 20.2857 1.56707 24.6345H21.4329Z" fill="currentColor"/>
-  </svg>
-);
-
-
-const MAIN_MENU_ITEMS = [
-  { label: 'Sankranti Rewards', isAction: true },
-  { label: 'Orders' },
-  { label: 'Find Nearest Sankranti' },
-  { label: 'Notifications' },
-  { label: 'User Preferences' },
-];
-
-const REWARDS_MENU_ITEMS = [
-  { label: 'Order History' },
-  { label: 'Payment Methods' },
-  { label: 'Personal & Preferences' },
-  { label: 'Find a Sankranti' },
-  { label: 'Our Commitment To You' },
-];
 
 
 export default function ProfileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
@@ -186,13 +150,13 @@ function RewardFeatureItem({ title, subtitle, isTop = false }: { title: string; 
 
 function Footer({ className = "" }: { className?: string }) {
   return (
-    <div className={`flex flex-col items-start gap-4 ${className}`}>
+    <div className={`flex flex-col items-start gap-4 z-1 ${className}`}>
       <div className="text-[11px] font-medium text-text-secondary opacity-60 tracking-wide">©Copyright2026 Sankranti</div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col">
         <Link to="#" className="text-[10px] font-bold text-secondary uppercase tracking-widest hover:opacity-75 transition-opacity">Privacy Policy</Link>
         <Link to="#" className="text-[10px] font-bold text-secondary uppercase tracking-widest hover:opacity-75 transition-opacity">Terms of Service</Link>
       </div>
-      <div className="text-[11px] font-medium text-text-secondary opacity-60 tracking-wide mt-1">App version: 1.3</div>
+      <div className="text-[11px] font-medium text-text-secondary opacity-60 tracking-wide">App version: 1.3</div>
     </div>
   );
 }

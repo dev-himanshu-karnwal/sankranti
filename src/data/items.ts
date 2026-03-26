@@ -1,6 +1,7 @@
 export const itemsData = [
   {
-    imageSrc: "/images/bowl.png",
+    id: "curry-bowl",
+    imageSrc: "/images/protein_bowl.png",
     title: "Curry Bowl",
     description: "Ghee rice base. Pick a protein, curry sauce, and toppings.",
     price: "$14.95",
@@ -8,6 +9,7 @@ export const itemsData = [
     category: "Bowls"
   },
   {
+    id: "desi-tacos",
     imageSrc: "/images/desi_tacos.png",
     title: "Desi Tacos",
     description: "Ghee rice. Authentic curry goat. Your choice of toppings.",
@@ -16,7 +18,8 @@ export const itemsData = [
     category: "Loaded Nachos"
   },
   {
-    imageSrc: "/images/protein_bowl.png",
+    id: "protein-bowl",
+    imageSrc: "/images/Bowl.png",
     title: "Protein Bowl",
     description: "Ghee rice base. Pick a protein, curry sauce, and toppings. Fryums on the side.",
     price: "$14.95",
@@ -24,6 +27,7 @@ export const itemsData = [
     category: "Bowls"
   },
   {
+    id: "curry-goat-bowl",
     imageSrc: "/images/curry_goat.png",
     title: "Curry Goat Bowl",
     description: "Ghee rice. Authentic curry goat. Your choice of toppings.",
@@ -33,6 +37,7 @@ export const itemsData = [
   },
   // Placeholders for other categories to demonstrate filtering
   {
+    id: "hyderabadi-biryani",
     imageSrc: "/images/biryani.png",
     title: "Hyderabadi Biryani",
     description: "Aromatic basmati rice cooked with succulent meat and traditional spices.",
@@ -41,6 +46,7 @@ export const itemsData = [
     category: "Biryanis"
   },
   {
+    id: "sweet-lassi",
     imageSrc: "/images/lassi.png",
     title: "Sweet Lassi",
     description: "Fresh yogurt drink with a hint of cardamom.",

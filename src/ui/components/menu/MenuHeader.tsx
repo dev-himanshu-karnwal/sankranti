@@ -27,7 +27,9 @@ export default function MenuHeader({ onMenuToggle, onCartToggle }: MenuHeaderPro
         <AppButton onClick={onCartToggle} className="!w-auto !p-0 hover:bg-transparent" aria-label="Cart">
           <svg width="20" height="20" viewBox="0 0 22 26" fill="none"><path d="M2.11628 7.86058C1.94931 7.86058 1.81395 7.99594 1.81395 8.16291V23.8838C1.81395 24.0508 1.94931 24.1862 2.11628 24.1862H19.0465C19.2135 24.1862 19.3488 24.0508 19.3488 23.8838V8.16291C19.3488 7.99594 19.2135 7.86058 19.0465 7.86058H2.11628ZM0 8.16291C0 6.99412 0.947488 6.04663 2.11628 6.04663H19.0465C20.2153 6.04663 21.1628 6.99412 21.1628 8.16291V23.8838C21.1628 25.0526 20.2153 26.0001 19.0465 26.0001H2.11628C0.947488 26.0001 0 25.0526 0 23.8838V8.16291Z" fill="var(--color-secondary)"/><path d="M10.5814 1.81395C8.74474 1.81395 7.25585 3.30287 7.25585 5.13953V9.37209C7.25585 9.873 6.84978 10.2791 6.34887 10.2791C5.84797 10.2791 5.44189 9.873 5.44189 9.37209V5.13953C5.44189 2.30105 7.74294 0 10.5814 0C13.4199 0 15.721 2.30105 15.721 5.13953V9.37209C15.721 9.873 15.3149 10.2791 14.814 10.2791C14.3131 10.2791 13.907 9.873 13.907 9.37209V5.13953C13.907 3.30287 12.4181 1.81395 10.5814 1.81395Z" fill="var(--color-secondary)"/></svg>
         </AppButton>
-        <AppButton className="!w-auto !justify-center border border-secondary rounded-full px-4 py-[6px] text-[10px] font-bold text-text-primary tracking-wider bg-transparent hover:bg-black/[0.02] transition-colors uppercase">PICKUP OR DELIVERY</AppButton>
+        <div className="max-[430px]:block hidden">
+          <AppButton className="!w-auto !justify-center border border-secondary rounded-full px-4 py-[6px] text-[10px] font-bold text-text-primary tracking-wider bg-transparent hover:bg-black/[0.02] transition-colors uppercase">PICKUP OR DELIVERY</AppButton>
+        </div>
       </div>
     </header>
   );

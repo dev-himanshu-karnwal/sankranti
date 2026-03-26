@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { DesktopProductCard, AppButton } from '../index';
 import { allCategories } from '../../../data/items';
+import { recommendationStore } from '../../../data/recommendationStore';
 
 interface DesktopViewProps {
   activeTab: string;
@@ -20,12 +21,12 @@ export default function DesktopView({
   navigate
 }: DesktopViewProps) {
   return (
-    <div className="hidden md:flex flex-col flex-1 w-full bg-surface-subtle">
+    <div className="hidden min-[431px]:flex flex-col flex-1 w-full bg-surface-subtle overflow-x-hidden">
       <header className="flex items-center justify-between px-10 py-3 w-full bg-white shadow-sm z-50 sticky top-0">
         <div className="flex-shrink-0 flex items-center justify-start cursor-pointer" onClick={() => navigate('/home')}>
           <img src="/images/sankranti_indian_kitchen.png" alt="Sankranti Logo" className="w-[85px] h-auto object-contain" />
         </div>
-        <nav className="flex items-center gap-8 justify-center flex-1">
+        <nav className="flex items-center gap-4 md:gap-8 justify-center flex-1 overflow-x-auto no-scrollbar px-4">
           <Link to="/home" className="text-[12px] font-bold text-text-primary hover:text-primary transition-colors tracking-wide leading-none">HOME</Link>
           <Link to="/menu" className="text-[12px] font-bold text-text-primary hover:text-primary transition-colors tracking-wide leading-none">MENU</Link>
           <Link to="#" className="text-[12px] font-bold text-text-primary hover:text-primary transition-colors tracking-wide leading-none">SCAN</Link>
@@ -71,10 +72,19 @@ export default function DesktopView({
           </div>
         </div>
           
-        <div className="w-full grid grid-cols-4 gap-8">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 px-2 md:px-0">
           {filteredItems.length > 0 ? (
-            filteredItems.map((item, idx) => (
-              <div key={idx} className="fade-in" style={{ animationDelay: `${idx * 0.05}s` }}>
+            filteredItems.map((item, idx) => {
+              return (
+                <div 
+                  key={idx} 
+                  className="fade-in cursor-pointer hover:scale-[1.02] transition-transform duration-300" 
+                  style={{ animationDelay: `${idx * 0.05}s` }}
+                  onClick={() => {
+                    recommendationStore.addRecommendedItem(item);
+                    navigate(`/builder/${item.id}`);
+                  }}
+                >
                 <DesktopProductCard 
                   imageSrc={item.imageSrc}
                   title={item.title}
@@ -82,9 +92,15 @@ export default function DesktopView({
                   price={item.price}
                   buttonLabel="ADD ITEM"
                   isVeg={item.isVeg}
+                  onAddClick={(e?: any) => {
+                    e?.stopPropagation();
+                    recommendationStore.addRecommendedItem(item);
+                    navigate(`/builder/${item.id}`);
+                  }}
                 />
               </div>
-            ))
+              );
+            })
           ) : (
             <div className="col-span-4 flex flex-col items-center justify-center py-24 opacity-30">
               <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg>

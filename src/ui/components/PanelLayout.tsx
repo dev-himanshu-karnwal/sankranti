@@ -32,9 +32,11 @@ function PanelLayout({ isShowDeliveryOption }: { isShowDeliveryOption?: boolean 
           </svg>
         </AppButton>
         {isShowDeliveryOption && (
-        <AppButton className="!w-auto !justify-center border border-secondary rounded-full px-5 py-[6px] text-[11px] font-bold text-text-primary tracking-wide bg-transparent hover:bg-black/[0.02]">
-          PICKUP OR DELIVERY
-        </AppButton>
+        <div className="max-[430px]:block hidden">
+          <AppButton className="!w-auto border border-secondary rounded-full px-4 py-[6px] text-[10px] font-bold text-text-primary tracking-wider bg-transparent hover:bg-black/[0.02] transition-colors !justify-center">
+            PICKUP OR DELIVERY
+          </AppButton>
+        </div>
         )}
         <AppButton onClick={() => setIsCartOpen(true)} className="!w-auto !p-0 text-secondary hover:opacity-80 transition-opacity hover:bg-transparent">
           <svg

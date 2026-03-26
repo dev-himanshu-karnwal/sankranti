@@ -10,9 +10,9 @@ export default function MenuPage() {
   const [isDesktopCartOpen, setIsDesktopCartOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-surface-subtle md:bg-surface-base flex flex-col font-['Poppins']">
-      <div className="md:hidden"><MenuMobile /></div>
-      <div className="hidden md:flex flex-col flex-1 w-full bg-surface-subtle">
+    <div className="min-h-screen bg-surface-subtle md:bg-surface-base flex flex-col font-['Poppins'] relative">
+      <div className="md:hidden relative z-10"><MenuMobile /></div>
+      <div className="hidden md:flex flex-col flex-1 w-full bg-surface-subtle relative z-10">
         <MenuHeader onMenuToggle={() => setIsDesktopMenuOpen(true)} onCartToggle={() => setIsDesktopCartOpen(true)} />
         <MenuDesktop />
       </div>
