@@ -62,7 +62,7 @@ export default function ProductBuilderPage() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             Back
           </button>
-          <h2 className="text-[15px] font-extrabold text-text-primary tracking-wide">Mobile Order and Pay</h2>
+          <h2 className="text-[15px] font-medium text-text-primary tracking-wide">Mobile Order and Pay</h2>
           <button className="text-text-secondary hover:text-text-primary transition-colors">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
           </button>
@@ -73,7 +73,7 @@ export default function ProductBuilderPage() {
           <div className="w-full max-w-[900px] flex gap-16 items-center">
             <img src={selectedProduct.imageSrc} alt={selectedProduct.title} className="w-[300px] h-[300px] object-contain drop-shadow-[0_15px_35px_rgba(0,0,0,0.15)] mix-blend-multiply flex-shrink-0" />
             <div className="flex flex-col">
-              <h1 className="text-[46px] font-extrabold text-text-primary tracking-tight mb-4 leading-none">{selectedProduct.category || selectedProduct.title}</h1>
+              <h1 className="text-[46px] font-bold text-text-primary tracking-tight mb-4 leading-none">{selectedProduct.category || selectedProduct.title}</h1>
               <p className="text-[15px] text-text-secondary font-medium leading-[1.6]">
                 {selectedProduct.description || `Build your perfect ${selectedProduct.title.toLowerCase()} with fresh ingredients, bold flavors, and authentic Indian spices.`}
               </p>
@@ -108,7 +108,7 @@ export default function ProductBuilderPage() {
                 
                 {/* Section Header */}
                 <div className="mb-6 relative">
-                  <h2 className="text-[18px] font-extrabold text-text-primary tracking-wide inline-block pb-2 relative z-10">
+                  <h2 className="text-[18px] font-medium text-text-primary tracking-wide inline-block pb-2 relative z-10">
                     {section.title}
                   </h2>
                   <div className="absolute left-0 bottom-0 w-[40px] h-[3px] bg-secondary rounded-full"></div>
@@ -157,7 +157,7 @@ export default function ProductBuilderPage() {
         <div className="fixed bottom-0 left-0 w-full bg-surface-base border-t border-border-subtle shadow-[0_-15px_40px_rgba(0,0,0,0.04)] px-10 flex items-center justify-between z-50">
            <div className="flex-1 max-w-[1240px] mx-auto py-5 flex items-center justify-between w-full">
              <div className="flex flex-col">
-                 <span className="text-[14px] font-extrabold text-text-primary uppercase tracking-wider">{selectedProduct.title}</span>
+                 <span className="text-[14px] font-bold text-text-primary uppercase tracking-wider">{selectedProduct.title}</span>
                  <span className="text-[12px] font-medium text-text-secondary mt-1">Select items to customize your {selectedProduct.title}</span>
              </div>
              <Button 

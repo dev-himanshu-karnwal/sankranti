@@ -21,12 +21,8 @@ export default function PaymentStep({ isPayment, setIsPayment, saveInfo, setSave
 
       <div className="mb-5 md:mb-8">
         <Field label="Card number">
-          <FormInput type="text" placeholder="1234 1234 1234 1234" icon={
-            <div className="flex gap-1">
-              <div className="w-8 h-5 bg-[#1A1F71] rounded-[2px] flex items-center justify-center text-[6px] font-bold text-white uppercase italic">VISA</div>
-              <div className="w-8 h-5 bg-[#EB001B] rounded-[2px] flex items-center justify-center"><div className="w-3 h-3 bg-[#FF5F00]/80 rounded-full -mr-1" /><div className="w-3 h-3 bg-white/40 rounded-full" /></div>
-              <div className="w-8 h-5 bg-[#016FD0] rounded-[2px] flex items-center justify-center text-[6px] font-bold text-white uppercase italic tracking-tighter">AMEX</div>
-            </div>
+          <FormInput type="text" placeholder="1234 1234 1234 1234" className="!rounded-[12px] !border-border-primary/40 !bg-white/40 !py-3 md:!py-4 !text-[14px] md:!text-[15px] !tracking-[0.1em]" icon={
+            <img src="/images/payment.png" alt="Card Types" className="h-[24px] md:h-[26px] w-auto object-contain mr-1" />
           }/>
         </Field>
       </div>

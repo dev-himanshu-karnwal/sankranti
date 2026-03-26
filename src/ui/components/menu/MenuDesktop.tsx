@@ -52,7 +52,7 @@ export default function MenuDesktop() {
           </button>
         </div>
         <div className="w-full flex flex-col items-center mb-10 pt-10 border-t border-border-subtle">
-          <h2 className="text-[32px] font-extrabold text-text-primary mb-12 relative text-center">Sankranti Recommends<div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 h-1.5 bg-primary rounded-full"></div></h2>
+          <h2 className="text-[32px] font-bold text-text-primary mb-12 relative text-center">Sankranti Recommends<div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 h-1.5 bg-primary rounded-full"></div></h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full max-w-[900px] px-6">
             {recommendedItems.map((item, idx) => (
               <div key={idx} onClick={() => navigate(`/builder/${item.id}`)} className="cursor-pointer hover:scale-[1.03] transition-transform duration-300">

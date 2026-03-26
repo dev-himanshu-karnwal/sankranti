@@ -41,14 +41,14 @@ export default function DesktopProductCard({
           {isVeg !== undefined && (
             <div className="mb-2">{isVeg ? <VegIcon /> : <NonVegIcon />}</div>
           )}
-          <h3 className="text-[16px] font-extrabold text-text-primary leading-tight tracking-tight mb-2">{title}</h3>
+          <h3 className="text-[16px] font-bold text-text-primary leading-tight tracking-tight mb-2">{title}</h3>
           <p className="text-[12px] font-medium text-text-secondary leading-[1.55] line-clamp-2">
             {description}
           </p>
         </div>
 
         <div className="flex items-center justify-between mt-5 pt-4 border-t border-border-subtle">
-          <span className="text-[17px] font-extrabold text-text-primary">{price}</span>
+          <span className="text-[17px] font-bold text-text-primary">{price}</span>
           <Button
             variant="secondary"
             onClick={onAddClick}
