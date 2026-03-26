@@ -1,6 +1,11 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { ThemeContext } from "./theme-context";
-import { DEFAULT_THEME, THEMES, THEME_STORAGE_KEY, type Theme } from "./theme.constants";
+import {
+  DEFAULT_THEME,
+  THEMES,
+  THEME_STORAGE_KEY,
+  type Theme,
+} from "./theme.constants";
 
 function isTheme(value: string): value is Theme {
   return THEMES.includes(value as Theme);
@@ -36,5 +41,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     [theme],
   );
 
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  );
 }

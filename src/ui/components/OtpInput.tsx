@@ -6,10 +6,17 @@ interface OtpInputProps {
   onChange: (value: string) => void;
 }
 
-export default function OtpInput({ length = 4, value, onChange }: OtpInputProps) {
+export default function OtpInput({
+  length = 4,
+  value,
+  onChange,
+}: OtpInputProps) {
   const inputsRef = useRef<(HTMLInputElement | null)[]>([]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number,
+  ) => {
     const val = e.target.value;
     if (/[^0-9]/.test(val)) return; // allow only numbers
 
@@ -24,7 +31,10 @@ export default function OtpInput({ length = 4, value, onChange }: OtpInputProps)
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
+  const handleKeyDown = (
+    e: React.KeyboardEvent<HTMLInputElement>,
+    index: number,
+  ) => {
     if (e.key === "Backspace") {
       if (!value[index] && index > 0) {
         // If current is empty, focus previous
@@ -40,7 +50,10 @@ export default function OtpInput({ length = 4, value, onChange }: OtpInputProps)
 
   const handlePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
     e.preventDefault();
-    const pastedData = e.clipboardData.getData("text/plain").replace(/[^0-9]/g, "").slice(0, length);
+    const pastedData = e.clipboardData
+      .getData("text/plain")
+      .replace(/[^0-9]/g, "")
+      .slice(0, length);
     onChange(pastedData);
     if (pastedData.length > 0) {
       inputsRef.current[Math.min(pastedData.length - 1, length - 1)]?.focus();
@@ -52,7 +65,9 @@ export default function OtpInput({ length = 4, value, onChange }: OtpInputProps)
       {Array.from({ length }).map((_, i) => (
         <input
           key={i}
-          ref={(el) => { inputsRef.current[i] = el; }}
+          ref={(el) => {
+            inputsRef.current[i] = el;
+          }}
           type="text"
           inputMode="numeric"
           pattern="[0-9]*"
