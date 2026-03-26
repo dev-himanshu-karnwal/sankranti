@@ -1,34 +1,36 @@
 import { Route, Routes } from "react-router-dom";
-import {
-  NotFoundPage,
-  OnboardPage,
-  SplashPage,
-  SignInPage,
-  CreateAccountPage,
-  VerificationPage,
-  AccountSuccessfulPage,
-  DirectoryPage,
-} from "../pages";
+import { NotFoundPage, OnboardPage, SplashPage, SignInPage, CreateAccountPage, VerificationPage, AccountSuccessfulPage, DirectoryPage } from "../pages";
 import { AuthLayout } from "../ui/components";
 import HomePage from "../pages/HomePage";
 import MenuPage from "../pages/MenuPage";
+import CategoryPage from "../pages/CategoryPage";
+import ProductBuilderPage from "../pages/ProductBuilderPage";
+import CheckoutPage from "../pages/CheckoutPage";
+import RewardPage from "../pages/RewardPage";
 
 export default function AppRoutes() {
   return (
     <Routes>
       {/* Can be deleted once all pages are linkked, tested and made dynamic */}
       <Route path="/directory" element={<DirectoryPage />} />
+
       <Route path="/" element={<SplashPage />} />
       <Route path="/onboard" element={<OnboardPage />} />
       <Route path="/account-successfull" element={<AccountSuccessfulPage />} />
+      
       <Route path="/auth" element={<AuthLayout />}>
         <Route path="sign-in" element={<SignInPage />} />
         <Route path="create-account" element={<CreateAccountPage />} />
         <Route path="verify" element={<VerificationPage />} />
       </Route>
-      <Route path="/home" element={<HomePage />} />
-      <Route path="/menu" element={<MenuPage />} />
-      ``
+
+      <Route path="/home" element ={<HomePage />} />
+      <Route path="/menu" element ={<MenuPage />} />
+      <Route path="/reward" element={<RewardPage />} />
+      <Route path="/category/:id" element={<CategoryPage />} />
+      <Route path="/builder/:item" element={<ProductBuilderPage />} />
+      <Route path="/checkout" element={<CheckoutPage />} />
+
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
