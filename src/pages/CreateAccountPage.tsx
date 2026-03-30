@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Input, RadioGroup } from "../ui/components";
 
 export default function CreateAccountPage() {
   const navigate = useNavigate();
+  const [enrollRewards, setEnrollRewards] = useState("yes");
+  const [receiveOffers, setReceiveOffers] = useState("yes");
 
   return (
     <>
@@ -40,7 +43,8 @@ export default function CreateAccountPage() {
               { label: "Yes", value: "yes" },
               { label: "No", value: "no" },
             ]}
-            value="yes"
+            value={enrollRewards}
+            onChange={setEnrollRewards}
           />
           <RadioGroup
             label="Receive text offers and promotions?*"
@@ -49,7 +53,8 @@ export default function CreateAccountPage() {
               { label: "Yes", value: "yes" },
               { label: "No", value: "no" },
             ]}
-            value="yes"
+            value={receiveOffers}
+            onChange={setReceiveOffers}
           />
         </div>
       </div>

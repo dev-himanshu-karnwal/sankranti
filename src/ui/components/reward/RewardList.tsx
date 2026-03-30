@@ -6,7 +6,7 @@ export default function RewardList() {
       <div className="w-full max-w-[1200px] py-10 md:py-16 px-6">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
           {rewardItems.map((item, idx) => (
-            <div key={idx} className="bg-white rounded-[24px] md:rounded-[32px] p-5 md:p-7 flex items-center md:flex-col md:text-center gap-5 md:gap-6 shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-border-subtle/50 transition-all duration-300 cursor-pointer group">
+            <div key={idx} className="bg-white rounded-[24px] md:rounded-[32px] p-5 md:p-7 flex items-center md:flex-col md:text-center gap-5 md:gap-6 shadow-[0_4px_4px_rgba(0,0,0,0.25)] border border-border-subtle/50 transition-all duration-300 cursor-pointer group">
               <div className="w-[100px] h-[90px] md:w-full md:h-[180px] bg-surface-muted rounded-[16px] md:rounded-[24px] flex-shrink-0 flex items-center justify-center overflow-hidden">
                 <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               </div>

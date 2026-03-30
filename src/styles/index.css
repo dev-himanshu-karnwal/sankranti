@@ -80,6 +80,13 @@ body {
   height: 100dvh;
   width: 100%;
   font-family: 'Poppins', sans-serif;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 a, button {
