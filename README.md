@@ -52,7 +52,7 @@ import reactDom from "eslint-plugin-react-dom";
 
 export default defineConfig([
   globalIgnores(["dist"]),
-  {
+  { 
     files: ["**/*.{ts,tsx}"],
     extends: [
       // Other configs...
