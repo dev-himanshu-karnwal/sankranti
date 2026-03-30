@@ -69,7 +69,7 @@ export default function MobileView({
                     recommendationStore.addRecommendedItem(item);
                     navigate(`/builder/${item.id}`);
                   }} 
-                  className="bg-white rounded-[16px] shadow-[0_2px_16px_rgba(0,0,0,0.06)] p-3.5 flex gap-4 cursor-pointer hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] active:scale-[0.98] active:opacity-90 transition-all duration-200 border border-transparent"
+                  className="bg-white rounded-[16px] shadow-[0_4px_4px_rgba(0,0,0,0.25)] p-3.5 flex gap-4 cursor-pointer hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] active:scale-[0.98] active:opacity-90 transition-all duration-200 border border-transparent"
                 >
                 <div className="flex flex-col flex-shrink-0 items-center justify-start pb-1 w-[120px]">
                   <div className="w-[120px] h-[95px] bg-surface-muted/50 rounded-[16px] flex items-center justify-center relative overflow-hidden pointer-events-none mb-3">

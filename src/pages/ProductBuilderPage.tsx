@@ -125,7 +125,7 @@ export default function ProductBuilderPage() {
                         className={`bg-white rounded-[16px] p-4 flex items-center gap-4 cursor-pointer hover:-translate-y-0.5 transition-all duration-300 border ${
                           isSelected 
                             ? 'border-secondary shadow-md bg-secondary/5' 
-                            : 'border-transparent shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-md hover:border-black/5'
+                            : 'border-transparent shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] hover:shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] hover:border-black/5'
                         }`}
                       >
                         <img src={opt.image} alt={opt.title} className="w-[60px] h-[60px] object-contain flex-shrink-0 drop-shadow-sm mix-blend-multiply rounded-full" onError={(e) => e.currentTarget.style.display = 'none'} />

@@ -23,7 +23,7 @@ export default function DesktopProductCard({
   isVeg
 }: DesktopProductCardProps) {
   return (
-    <div className={`bg-white rounded-[20px] shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-border-subtle/70 flex flex-col cursor-pointer hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 group overflow-hidden ${className}`}>
+    <div className={`bg-white rounded-[20px] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] border border-border-subtle/70 flex flex-col cursor-pointer hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 group overflow-hidden ${className}`}>
 
       {/* Image Block */}
       <div className="w-full h-[180px] bg-surface-muted flex items-center justify-center px-6 pt-5 pb-3 relative overflow-hidden flex-shrink-0">

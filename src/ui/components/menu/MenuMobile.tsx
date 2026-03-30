@@ -36,7 +36,7 @@ export default function MenuMobile() {
         <div className="w-full text-left px-7 mb-4 mt-2"><h2 className="text-[18px] font-semibold text-text-primary tracking-wide">Sankranti Recommends</h2></div>
         <div className="flex flex-col gap-5 px-6 pb-10">
           {recommendedItems.map((item, idx) => (
-            <div key={idx} onClick={() => navigate(`/builder/${item.id}`)} className="bg-white rounded-[16px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] p-3.5 border border-border-subtle flex gap-4 cursor-pointer hover:shadow-md transition-all active:scale-[0.98]">
+            <div key={idx} onClick={() => navigate(`/builder/${item.id}`)} className="bg-white rounded-[16px] shadow-[0_4px_4px_rgba(0,0,0,0.25)] p-3.5 border border-border-subtle flex gap-4 cursor-pointer hover:shadow-md transition-all active:scale-[0.98]">
               <div className="w-[110px] h-[90px] bg-surface-muted rounded-[10px] flex items-center justify-center relative overflow-hidden flex-shrink-0">
                 <img src={item.imageSrc} alt={item.title} className="w-[100%] h-auto object-contain drop-shadow-md mix-blend-multiply relative" />
               </div>
